@@ -1,7 +1,6 @@
 function setup() {
     createCanvas(400, 300);
-   
-      
+    
     if(mouseX>200)
     {
     fill("red");
