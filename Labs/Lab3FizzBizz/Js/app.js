@@ -5,9 +5,9 @@ function draw(){
 
             var x=100;
         
-            for ( var i=0; i<1000;i+=50){
+            for ( var i=0; i<100;i+=50){
         
-            fill(0);
+            fill(0);0
         
             ellipse(i,x,50,50); 
             if(i%3==0) {
