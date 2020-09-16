@@ -1,11 +1,11 @@
 function setup(){
-    createCanvas(800,600);
+    createCanvas(800,1000);
 }
 function draw(){
 
             var x=100;
         
-            for ( var i=0; i<600;i+=50){
+            for ( var i=0; i<1000;i+=50){
         
             fill(0);
         
