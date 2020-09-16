@@ -1,8 +1,8 @@
 function setup(){
-    createCanvas(800,600);
+    createCanvas(300,220);
 }
- var x=0;
-var y=0;
+ var x=0,y=0;
+ function draw(){
     for(i=0; i<4; i++){
    for(j=0; j<=i; j++)
 {
@@ -13,4 +13,5 @@ var y=0;
 }
     x=0;
     y+=55;
+}
 }
