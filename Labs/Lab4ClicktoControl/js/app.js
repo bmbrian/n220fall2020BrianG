@@ -7,7 +7,7 @@ createCanvas(400, 400);
 }
 
 function draw() {
-background(127);
+background(255);
 
 for(let i = 0; i < circle_coords.length; i++){
     ellipse(width/2,circle_coords[i],diameter,diameter);
