@@ -1,4 +1,4 @@
-var rectXY = []; 
+var XY = []; 
 function setup() {
   createCanvas(400, 400);
     }
@@ -7,12 +7,12 @@ function setup() {
     noStroke();
     rectMode(CENTER);
     fill(255);
-    for (var i = 0; i < rectXY.length; i++) {
-    fill(rectXY[i][2]);
-    rect(rectXY[i][0], rectXY[i][1], 50, 25);
-    rectXY[i][1] += 1;
+    for (var i = 0; i < XY.length; i++) {
+    fill(XY[i][2]);
+    rect(XY[i][0], XY[i][1], 50, 25);
+    XY[i][1] += 1;
      }
     }
 function mousePressed()     {
-  rectXY.push([mouseX, mouseY, random(255)]);
+  XY.push([mouseX, mouseY, random(255)]);
 }

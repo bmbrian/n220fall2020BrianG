@@ -1,4 +1,3 @@
-var radius = 60;
 var x = [0,0,0,0,0,0,0,0,0,0,0];
 var y = [0,0,0,0,0,0,0,0,0,0,0];
 function setup() {
@@ -16,6 +15,6 @@ function draw()
     for(let i=0;i<10;i++)
     {
         fill(255,0,0);
-    ellipse( x[i], y[i], radius, radius );
+    ellipse( x[i], y[i], 60, 60 );
     }
 }
