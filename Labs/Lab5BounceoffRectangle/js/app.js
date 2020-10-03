@@ -1,44 +1,45 @@
+let circle_x; 
+let circle_y; 
+let circle_xspeed = -2; 
+let circle_yspeed = 2; 
+let circle_radius = 30;
 
- let c_x; 
- let c_y; 
- let c_xspeed = -2; 
- let c_yspeed = 2; 
- let c_radius = 30;
- 
- let r_width = 400;
- let r_height = 50;  
- 
- let r_x = -400;  
- let r_y = 600;  
- let r_xspeed = 2; 
- 
- function setup() { 
-   createCanvas(800, 700);
-   c_x = width - 2*c_radius;  
-   c_y = 2*c_radius;
- } 
- 
- function draw() { 
-   background(255);
-   
-   
-   ellipse(c_x, c_y, 2*c_radius, 2*c_radius); 
-   
-   c_x += c_xspeed; 
-   c_y += c_yspeed; 
+let rect_width = 400;
+let rect_height = 50;  
 
-   rect(r_x,r_y, r_w, r_height);
-   
-   if(r_x > width) {   
-     r_x = -r_width;
-   }
-   
+let rect_x = -400;  
+let rect_y = 600;  
+let rect_xspeed = 2; 
 
-   r_x += r_xspeed;
-   
+function setup() { 
+  createCanvas(800, 700);
+  circle_x = width - 2*circle_radius;   
+  circle_y = 2*circle_radius;
+} 
 
-   if(collideRect( circle_x, circle_y, rect_x, rect_y, rect_width, rect_height)) circle_yspeed = -circle_yspeed;
- }
+function draw() { 
+  background(255);
+  
+ 
+  ellipse(circle_x, circle_y, 2*circle_radius, 2*circle_radius); 
+  
+  
+  circle_x += circle_xspeed; 
+  circle_y += circle_yspeed; 
+  
+   
+  rect(rect_x,rect_y, rect_width, rect_height);
+  
+  if(rect_x > width) {   
+    rect_x = -rect_width;
+  }
+  
+  rect_x += rect_xspeed;
+  
+  
+  if(collideRect( circle_x, circle_y, rect_x, rect_y, rect_width, rect_height)) circle_yspeed = -circle_yspeed;
+}
+
 
 function collideRect(circleX, circleY, rectX, rectY, rectW, rectH) {
 
