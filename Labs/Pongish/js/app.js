@@ -53,7 +53,7 @@ fill(94, 3, 252);
 noStroke();
 rect(xPaddle, yPaddle, paddleWidth, paddleHeight);
   
-fill(94, 3, 252);
+fill(227, 252, 3);
 textSize(24);
    text("Score: " + score, 10, 25);
 }
