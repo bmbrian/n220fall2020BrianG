@@ -39,7 +39,7 @@ function draw() {
    score++;
    }     
 
-   fill(255, 0, 255);
+   fill(252,3,3);
    noStroke();
    ellipse(Ball_X, Ball_Y, diameter, diameter);
   
@@ -49,11 +49,11 @@ function draw() {
    started = true;
    }
   
-fill(0, 255, 255);
+fill(94, 3, 252);
 noStroke();
 rect(xPaddle, yPaddle, paddleWidth, paddleHeight);
   
-fill(0, 255, 255);
+fill(94, 3, 252);
 textSize(24);
    text("Score: " + score, 10, 25);
 }
