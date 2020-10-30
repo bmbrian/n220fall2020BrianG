@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="js/app.js"></script>
+    <input
+
+    type="text"
+
+    id="textboxName"
+
+    placeholder="Enter Name"/>
+
+<br><br>
+
+
+
+<input type="button" value="Greet User" onclick="greet()"/>
+
+
+
+    <script>
+
+      
+
+        function greet()
+
+        {
+            var name=document.getElementById("textboxName").value;
+
+            
+
+            console.log(displayName(name));
+
+        }
+
+        
+        function displayName(name)
+
+        {
+
+            return "Hello "+name;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+</body>
+</html>
