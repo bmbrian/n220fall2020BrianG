@@ -1,130 +1,113 @@
-var CardArr = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8'];
+var CardArr = ['1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8'];
 var CardValues = [];
 var CardIds = [];
-var Card_flipped = 0;
+var flips = 0;
 
-Array.prototype.Card_Random = function()
-{
+Array.prototype.random = function () {
 
     var i = this.length, j, temp;
 
-    while(--i > 0)
-    {
+    while (--i > 0) {
 
-    j = Math.floor(Math.random() * (i+1));
+        j = Math.floor(Math.random() * (i + 1));
 
-    temp = this[j];
+        temp = this[j];
 
-    this[j] = this[i];
+        this[j] = this[i];
 
-    this[i] = temp;
+        this[i] = temp;
 
     }
 
 }
 
+function firstflip(cardTile, val) {
+    debugger;
 
-
-function CardFlip(cardTile, val)
-{debugger;
-
-    if(cardTile.innerHTML == "" && memoryValues.length < 2)
-    {
+    if (cardTile.innerHTML == "" && CardValues.length < 2) {
 
         cardTile.innerHTML = val;
 
-        if(memoryValues.length == 0)
-        {   
-            CardValues.push(val);
-
-            CardIds.push(cardTile.id);
-
-        }else if(CardValues.length == 1)
-        
-        {
+        if (CardValues.length == 0) {
 
             CardValues.push(val);
 
             CardIds.push(cardTile.id);
 
-            if(CardValues[0] == CardValues[1])
-            {
-                tiles_flipped += 2;
+        } else if (CardValues.length == 1) {
+
+            CardValues.push(val);
+
+            CardIds.push(cardTile.id);
+
+            if (CardValues[0] == CardValues[1]) {
+
+                flips += 2;
 
                 CardValues = [];
 
                 CardIds = [];
 
-                if(tiles_flipped == CardArr.length)
-                {
+                if (flips == CardArr.length) {
 
-                alert("WINNIER CHIKEN DINNER!");
+                    alert("WINNER WINNER CHICKEN DINNER!!!!");
 
                 }
-            
-} else 
-    {
 
-        function CardflipBack() 
-        {
+            } else {
 
-        var Square_1 = document.getElementById(memoryCardIds[0]);
+                function Secondflip() {
 
-        var Square_2 = document.getElementById(memoryCardIds[1]);
+                    var Cardone = document.getElementById(CardIds[0]);
 
-        Square_1.innerHTML = "";
+                    var Cardtwo = document.getElementById(CardIds[1]);
 
-        Square_2.innerHTML = "";
+                    Cardone.innerHTML = "";
 
-        CardValues = [];
+                    Cardtwo.innerHTML = "";
 
-        CardIds = [];
+                    CardValues = [];
 
-        }
+                    CardIds = [];
 
-        setTimeout(CardflipBack, 700);
+                }
 
-    }
+                setTimeout(Secondflip, 700);
 
-}
-
-}
-
-}
-
-
-
-function LoadElements()
-
-    {
-
-        CardArr.Card_Random();
-
-        var FACECARD = document.querySelectorAll(".FACECARD");
-
-        for(var i = 0; i < card.length; i++) 
-        {
-
-        FACECARD[i].setAttribute("id", "FACECARD_" + i + "_" + memoryArr[i]);
+            }
 
         }
 
     }
 
+}
 
+function Load() {
 
-document.addEventListener('DOMContentLoaded', function() {
+    CardArr.random();
 
-document.body.addEventListener('click', function (event) {
+    var card = document.querySelectorAll(".FACECARD");
 
-if(event.srcElement.className == 'FACECARD' ) {
+    for (var i = 0; i < card.length; i++) {
 
-var idElement = event.srcElement.id.split("_");
+        card[i].setAttribute("id", "FACECARD_" + i + "_" + CardArr[i]);
 
-flipCard(event.srcElement, idElement[2]);
+    }
 
-};
+}
 
-});
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.body.addEventListener('click', function (click) {
+
+        if (click.srcElement.className == 'FACECARD') {
+
+            var idElement = click.srcElement.id.split("_");
+
+            firstflip(click.srcElement, idElement[2]);
+
+        };
+
+    });
 
 });
