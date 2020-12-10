@@ -21,24 +21,24 @@ Array.prototype.random = function () {
 
 }
 
-function firstflip(cardTile, val) {
+function firstflip(CardSquare, val) {
     debugger;
 
-    if (cardTile.innerHTML == "" && CardValues.length < 2) {
+    if (CardSquare.innerHTML == "" && CardValues.length < 2) {
 
-        cardTile.innerHTML = val;
+        CardSquare.innerHTML = val;
 
         if (CardValues.length == 0) {
 
             CardValues.push(val);
 
-            CardIds.push(cardTile.id);
+            CardIds.push(CardSquare.id);
 
         } else if (CardValues.length == 1) {
 
             CardValues.push(val);
 
-            CardIds.push(cardTile.id);
+            CardIds.push(CardSquare.id);
 
             if (CardValues[0] == CardValues[1]) {
 
