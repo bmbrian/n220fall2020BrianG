@@ -5,15 +5,15 @@ var flips = 0;
 
 Array.prototype.random = function () {
 
-    var i = this.length, j, temp;
+    var i = this.length, C, temp;
 
     while (--i > 0) {
 
-        j = Math.floor(Math.random() * (i + 1));
+        C = Math.floor(Math.random() * (i + 1));
 
-        temp = this[j];
+        temp = this[C];
 
-        this[j] = this[i];
+        this[C] = this[i];
 
         this[i] = temp;
 
@@ -86,11 +86,11 @@ function Load() {
 
     CardArr.random();
 
-    var card = document.querySelectorAll(".FACECARD");
+    var Cards = document.querySelectorAll(".FACECARD");
 
-    for (var i = 0; i < card.length; i++) {
+    for (var i = 0; i < Cards.length; i++) {
 
-        card[i].setAttribute("id", "FACECARD_" + i + "_" + CardArr[i]);
+        Cards[i].setAttribute("id", "FACECARD_" + i + "_" + CardArr[i]);
 
     }
 
